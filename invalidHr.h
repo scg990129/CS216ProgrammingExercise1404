@@ -10,14 +10,10 @@
 
 using namespace std;
 
-class invalidHr : protected runtime_error {
+class invalidHr : public runtime_error {
 public:
-    const static std::string &ERROR;// = "invalid Hour";
-    invalidHr();
-//    virtual const char* what()  ;
-    virtual const bool isInvalid(const int& time) const;
-protected:
-    invalidHr(const string& ERROR);
+    invalidHr():runtime_error("Invalid hour"){
+    }
 };
 
 

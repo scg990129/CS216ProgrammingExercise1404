@@ -5,14 +5,15 @@
 #ifndef CS216PROGRAMMINGEXERCISE1404_INVALIDMIN_H
 #define CS216PROGRAMMINGEXERCISE1404_INVALIDMIN_H
 
-#include "invalidHr.h"
+#include <stdexcept>
+#include <string>
 
-class invalidMin: public invalidHr {
+using namespace std;
+
+class invalidMin : public runtime_error {
 public:
-    const static std::string &ERROR;// = "invalid Hour";
-    invalidMin();
-    const bool isInvalid(const int& time) const;
-//    const char *what();
+    invalidMin():runtime_error("Invalid hour"){
+    }
 };
 
 #endif //CS216PROGRAMMINGEXERCISE1404_INVALIDMIN_H
